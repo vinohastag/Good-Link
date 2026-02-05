@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Valentines❤️ </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background-color: pink;
+                font-family:'Dancing Script', cursive;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color:bisque;
+                height: 100vh;
+                margin:0%;
+            }
+
+            .box {
+                background:darkmagenta;
+                padding: 20px;
+                border-radius: 40px;
+                text-align: center;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+               
+            }
+
+            h1 {
+                color:#ff4d6d;
+            }
+
+            button {
+                font-size: 18px;
+                padding: 50px 50px;
+                margin: 10px;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+
+            #yes {
+                background-color: #ff4d6d;
+                color: white;
+                box-shadow: 0 10px 20px pink;
+               
+            }
+
+            #no {
+                background-color: #ccc;
+                box-shadow: 0 10px 20px black;
+                color: white;
+                position: absolute;
+
+                
+
+            }
+
+            .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 24px;
+            animation: floatUp 4s linear forwards;
+            pointer-events: none;
+            }
+
+            @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                }
+                    100% {
+                transform: translateY(-100vh) scale(1.8);
+                opacity: 0;
+                }
+                    }       
+
+            
+        </style>
+    </head>
+
+    <body>
+
+       
+        <div class="box">
+            <h1> Heidi My Love💐 <br> Will you be my Valentine?💗</h1>
+            <button id="yes" title="This will make me happy😍">Yes💕</button>
+            <button id="no" title="This will make me depressed☹️">No🥺</button>
+        </div>
+
+        <script>
+            const yesBtn = document.getElementById("yes");
+            const noBtn = document.getElementById("no");
+
+            yesBtn.onclick = function () {
+                document.body.innerHTML = "<h1 style='color:#ff4d6d; text-align:center;'>YAYYYY ILOVEYOUBABI🥰🥰🥰 </h1>";
+
+                setInterval(createHeart, 200);
+            };
+
+            function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+
+
+            noBtn.onmouseover =
+            function () {
+                const x = Math.random()
+                * (window.innerWidth - 100);
+                const y = Math.random()
+                * (window.innerHeight - 50);
+
+                noBtn.style.left = x +
+                "px";
+                noBtn.style.top = y +
+                "px";
+                noBtn.style.transform = "none";
+            }
+
+           
+        </script>
+    </body>
+</html>
